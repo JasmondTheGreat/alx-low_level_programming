@@ -15,9 +15,11 @@ for (sDig = fDig + 1; sDig <= 57; sDig++)
 {
 putchar(fDig);
 putchar(sDig);
-if (fDig != 56 && sDig != 57)
+if (fDig != 56)
+{
 putchar(',');
 putchar(' ');
+}
 }
 }
 putchar('\n');
