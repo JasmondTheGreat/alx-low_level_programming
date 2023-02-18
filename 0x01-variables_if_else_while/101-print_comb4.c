@@ -19,7 +19,7 @@ int main(void)
                 putchar(fDig);
                 putchar(sDig);
                 putchar(tDig);
-                
+
                 if (fDig != 55)
                 {
                     putchar(',');
