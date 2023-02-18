@@ -14,7 +14,7 @@ int main(void)
 	{
 		for (sDig = fDig + 1; sDig <= 56; sDig++)
 		{
-			for (tDig = fDig + 2; tDig <= 57; tDig++)
+			for (tDig = sDig + 1; tDig <= 57; tDig++)
 			{
 				putchar(fDig);
 				putchar(sDig);
