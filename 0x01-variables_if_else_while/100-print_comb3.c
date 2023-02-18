@@ -8,21 +8,22 @@
 
 int main(void)
 {
-int fDig, sDig;
-for (fDig = 48; fDig <= 56; fDig++)
-{
-for (sDig = fDig + 1; sDig <= 57; sDig++)
-{
-putchar(fDig);
-putchar(sDig);
-if (fDig != 56)
-{
-putchar(',');
-putchar(' ');
-}
-}
-}
-putchar('\n');
+	int fDig, sDig;
 
-return (0);
+	for (fDig = 48; fDig <= 56; fDig++)
+	{
+		for (sDig = fDig + 1; sDig <= 57; sDig++)
+		{
+			putchar(fDig);
+			putchar(sDig);
+			if (fDig != 56)
+			{
+				putchar(',');
+				putchar(' ');
+			}
+		}
+	}
+	putchar('\n');
+
+	return (0);
 }
