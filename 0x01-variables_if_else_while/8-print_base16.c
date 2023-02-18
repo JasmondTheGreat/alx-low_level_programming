@@ -8,9 +8,11 @@
 
 int main(void)
 {
-for (int hexNum = 48; hexNum <= 57; hexNum++)
+int hexNum;
+char hexChar;
+for (hexNum = 48; hexNum <= 57; hexNum++)
 putchar(hexNum);
-for (char hexChar = 'a'; hexChar <= 'f'; hexChar++)
+for (hexChar = 'a'; hexChar <= 'f'; hexChar++)
 putchar(hexChar);
 
 putchar('\n');
