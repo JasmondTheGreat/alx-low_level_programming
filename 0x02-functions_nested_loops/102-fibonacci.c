@@ -10,11 +10,12 @@
 
 int main(void)
 {
-	int i, prevTwoNum, prevNum, nextNum, max;
+	int i, max;
+	long int prevTwoNum, prevNum, nextNum;
 
 	prevTwoNum = 1, prevNum = 2, max = 50;
 
-	printf("%d, %d, ", prevTwoNum, prevNum);
+	printf("%ld, %ld, ", prevTwoNum, prevNum);
 
 	for (i = 3; i <= max; i++)
 	{
@@ -23,9 +24,9 @@ int main(void)
 		prevNum = nextNum;
 
 		if (i < max)
-			printf("%d, ", nextNum);
+			printf("%ld, ", nextNum);
 		else
-			printf("%d", nextNum);
+			printf("%ld", nextNum);
 	}
 
 	putchar('\n');
