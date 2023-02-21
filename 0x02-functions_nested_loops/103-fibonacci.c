@@ -13,6 +13,7 @@ int main(void)
 	int i;
 	int prevTwoNum, prevNum, nextNum, max;
 	long evenFibSum;
+
 	evenFibSum = 2;
 
 	prevTwoNum = 1, prevNum = 2, max = 4000000;
