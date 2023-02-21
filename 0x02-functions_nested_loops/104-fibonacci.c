@@ -11,11 +11,11 @@
 int main(void)
 {
 	int i, length;
-	long int prevTwoNum, prevNum, nextNum;
+	long long prevTwoNum, prevNum, nextNum;
 
 	prevTwoNum = 1, prevNum = 2, length = 98;
 
-	printf("%ld, %ld, ", prevTwoNum, prevNum);
+	printf("%lld, %lld, ", prevTwoNum, prevNum);
 
 	for (i = 3; i <= length; i++)
 	{
@@ -24,9 +24,9 @@ int main(void)
 		prevNum = nextNum;
 
 		if (i < length)
-			printf("%ld, ", nextNum);
+			printf("%lld, ", nextNum);
 		else
-			printf("%ld", nextNum);
+			printf("%lld", nextNum);
 	}
 
 	putchar('\n');
