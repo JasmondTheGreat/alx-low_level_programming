@@ -17,15 +17,19 @@ int main(void)
 	evenFibSum = 2;
 
 	prevTwoNum = 1, prevNum = 2, max = 4000000;
-
+	
 	for (i = 3; i <= max; i++)
 	{
-		nextNum = prevNum + prevTwoNum;
-		prevTwoNum = prevNum;
-		prevNum = nextNum;
-
-		if (nextNum % 2 == 0)
-			evenFibSum += nextNum;
+		while (nextNum <= max)
+		{
+			nextNum = prevNum + prevTwoNum;
+			prevTwoNum = prevNum;
+			prevNum = nextNum;
+			
+			if (prevNum % 2 == 0)
+			evenFibSum += prevNum;
+		}
+	
 	}
 
 	printf("%ld\n", evenFibSum);
