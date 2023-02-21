@@ -14,7 +14,7 @@ int main(void)
 	int prevTwoNum, prevNum, nextNum, max;
 	long evenFibSum;
 
-	evenFibSum = 2;
+	evenFibSum = 0;
 
 	prevTwoNum = 1, prevNum = 2, max = 4000000;
 
@@ -26,8 +26,8 @@ int main(void)
 			prevTwoNum = prevNum;
 			prevNum = nextNum;
 
-			if (prevNum % 2 == 0)
-			evenFibSum += prevNum;
+			if (prevTwoNum % 2 == 0)
+			evenFibSum += prevTwoNum;
 		}
 
 	}
