@@ -17,7 +17,7 @@ int main(void)
 	evenFibSum = 2;
 
 	prevTwoNum = 1, prevNum = 2, max = 4000000;
-	
+
 	for (i = 3; i <= max; i++)
 	{
 		while (nextNum <= max)
@@ -25,11 +25,11 @@ int main(void)
 			nextNum = prevNum + prevTwoNum;
 			prevTwoNum = prevNum;
 			prevNum = nextNum;
-			
+
 			if (prevNum % 2 == 0)
 			evenFibSum += prevNum;
 		}
-	
+
 	}
 
 	printf("%ld\n", evenFibSum);
