@@ -9,23 +9,23 @@
 
 void print_triangle(int size)
 {
-	int i, j;
+	int row, col;
 
 	if (size <= 0)
 		putchar('\n');
 	
 	else
 	{
-		for (i = size; i > 0; i--)
+		for (row = size; row > 0; row--)
 		{
-			for (j = size; j > i; j--)
+			for (col = size - row; col > i; col--)
 				putchar(' ');
 
 			putchar('\n');
 		}
-		for (i = 0; i < size; i++)
+		for (row = 0; row < size; row++)
 		{
-			for (j = 0; j < i; j++)
+			for (col = 0; col < i; col++)
 				putchar('#');
 
 			putchar('\n');
