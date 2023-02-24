@@ -2,8 +2,11 @@
 
 /**
  * main - prints the numbers from 1 to 100
- * For multiples of three, print 'Fizz', and for the multiples of five, print 'Buzz', otherwise, print the number.
+ * For multiples of three, print 'Fizz',
+ * and for the multiples of five, print 'Buzz',
+ * otherwise, print the number.
  *
+ * Return: 0
  */
 
 int main(void)
@@ -19,7 +22,7 @@ int main(void)
 			else
 				printf("FizzBuzz");
 		}
-	
+
 		else if (i % 3 == 0)
 		{
 			if (i < 100)
