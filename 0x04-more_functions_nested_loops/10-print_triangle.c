@@ -18,12 +18,11 @@ void print_triangle(int size)
 	{
 		for (row = 0; row < size; row++)
 		{
-			for (col = row; col < size; col++)
+			for (col = row; col < size - 1; col++)
 				putchar(' ');
 			for (col = 0; col < row + 1; col++)
 				putchar('#');
 			putchar('\n');
 		}
-		putchar('\n');
 	}
 }
