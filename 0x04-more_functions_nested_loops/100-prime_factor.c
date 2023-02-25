@@ -8,28 +8,28 @@
 
 int main(void)
 {
-    int i, primeFac;
-    long number;
+	int i, primeFac;
+	long number;
 
-    number = 612852475143;
-    primeFac = 1;
+	number = 612852475143;
+	primeFac = 1;
 
-    for (i = 2; i * i <= number; i++)
-    {
-        while (number % i == 0)
-        {
-            primeFac = i;
-            number /= i;
-        }
-    }
+	for (i = 2; i * i <= number; i++)
+	{
+		while (number % i == 0)
+		{
+			primeFac = i;
+			number /= i;
+		}
+	}
 
-    if (number > 1)
-    {
-        primeFac = number;
-    }
+	if (number > 1)
+	{
+		primeFac = number;
+	}
 
-    printf("%d\n", primeFac);
+	printf("%d\n", primeFac);
 
-    return (0);
+	return (0);
 }
 
