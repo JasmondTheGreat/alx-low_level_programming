@@ -2,30 +2,24 @@
 
 /**
  * print_diagonal - draws a diagonal line on the terminal
- *
  * @n: the number of times the character '\' should be printed
  */
 
 void print_diagonal(int n)
 {
-	int i, j;
+	int row, col;
 
 	if (n <= 0)
 		putchar('\n');
-
 	else
 	{
-		for (i = 0; i < n; i++)
+		for (row = 0; row < n; row++)
 		{
-			for (j = 0; j < i; j++)
-			{
+			for (col = 0; col < row; col++)
 				putchar(' ');
-				putchar('\\');
-				putchar('\n');
-
-			}
+			putchar('\\');
+			putchar('\n');
 		}
-
-		putchar('\n');
 	}
+
 }
