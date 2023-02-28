@@ -9,7 +9,7 @@
 void print_rev(char *s)
 {
 	int i, length, middle;
-	char temp;
+	char *temp;
 
 	length = strlen(s);
 	middle = length / 2;
