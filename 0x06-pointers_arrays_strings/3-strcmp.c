@@ -18,10 +18,13 @@ int _strcmp(char *s1, char *s2)
 
 	for (i = 0; i < len1; i++)
 	{
-		if (s1[i] < s2[i])
-			count2++;
-		else if (s1[i] > s2[i])
-			count1++;
+		if (s1[i] != s2[i])
+		{
+			if (s1[i] < s2[i])
+				count2++;
+			else if (s1[i] > s2[i])
+				count1++;
+		}
 	}
 
 	if (count1 > count2)
