@@ -1,5 +1,11 @@
 /**
  * cap_string - capitalizes all words of a string
+ *
+ * Approach: if a character is in the range of a - z,
+ * we will check the previous character,
+ * and if it is one of the word separators, we capitalize
+ * that character at that index
+ *
  * @str: string to be capitalized
  * Return: pointer to str
  */

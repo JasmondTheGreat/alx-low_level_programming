@@ -26,10 +26,10 @@ char *_strncat(char *dest, char *src, int n)
 		if (i == (len2 - 1))
 			break;
 
-		dest[len1 + i] = src[i];
+		dest[len1] = src[i];
 	}
 
-	if (len2 < n)
+	if (n < (len2 + 1))
 		dest[i] = '\0';
 
 	return (dest);
