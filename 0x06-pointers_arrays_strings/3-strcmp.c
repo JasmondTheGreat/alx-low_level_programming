@@ -14,10 +14,7 @@ int _strcmp(char *s1, char *s2)
 
 	for (i = 0; s1[i] != '\0' || s2[i] != '\0'; i++)
 	{
-		result =
-			s1[i] > s2[i] ? 15
-			: s1[i] < s2[i] ? -15
-			: 0;
+		result = s1[i] != s2[i] ? s1[i] - s2[i] : 0;
 		break;
 	}
 
