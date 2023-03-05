@@ -9,5 +9,6 @@ char *string_toupper(char *);
 char *leet(char *);
 char *rot13(char *);
 int _strcmp(char *s1, char *s2);
+void print_number(int n);
 
 #endif
