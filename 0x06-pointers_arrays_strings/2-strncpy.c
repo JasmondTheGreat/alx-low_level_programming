@@ -21,7 +21,7 @@ char *_strncpy(char *dest, char *src, int n)
 		dest[i] = src[i];
 	}
 
-	if (n < (len + 1))
+	if (n < (len))
 	{
 		dest[n + 1] = '\0';
 	}
