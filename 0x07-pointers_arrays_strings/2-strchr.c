@@ -9,23 +9,13 @@
 
 char *_strchr(char *s, char c)
 {
-	int i;
-	char *null, *firstOcc;
-
-	null = 0;
-
-	for (i = 0; s[i] != '\0'; i++)
+	while (*s != '\0')
 	{
+		if (*s == c)
+			return (char *) s;
 
-		if (s[i] == c)
-		{
-			firstOcc = &s[i];
-			break;
-		}
+		s++;
 	}
 
-	if (firstOcc)
-		return (firstOcc);
-
-	return (null);
+	return NULL;
 }
