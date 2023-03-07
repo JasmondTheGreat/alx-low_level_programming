@@ -9,10 +9,9 @@
 
 char *_strchr(char *s, char c)
 {
-	int i, j;
-	char *null;
+	int i;
+	char *null, *firstOcc;
 
-	j = -3;
 	null = 0;
 
 	for (i = 0; s[i] != '\0'; i++)
@@ -20,12 +19,13 @@ char *_strchr(char *s, char c)
 
 		if (s[i] == c)
 		{
-			j = i;
+			firstOcc = &s[i];
 			break;
 		}
 	}
 
-	if (j != 3)
-		return (&s[j]);
+	if (firstOcc)
+		return (firstOcc);
+
 	return (null);
 }
