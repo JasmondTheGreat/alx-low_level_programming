@@ -1,3 +1,5 @@
+#include <stddef.h>
+
 /**
  * _strchr - locates a character in a string
  * @s: string to check
@@ -7,13 +9,19 @@
 
 char *_strchr(char *s, char c)
 {
-	int i;
+	int i, j;
+
+	j = -3;
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
+
 		if (s[i] == c)
+		{
+			j = i;
 			break;
+		}
 	}
 
-	return (&s[i]);
+	return (j != -3 ? &s[j] : NULL);
 }
