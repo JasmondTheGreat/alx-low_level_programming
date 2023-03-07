@@ -23,5 +23,5 @@ char *_strchr(char *s, char c)
 		}
 	}
 
-	return (j != -3 ? &s[j] : NULL);
+	return (j != -3 ? &s[j] : NULL);  
 }
