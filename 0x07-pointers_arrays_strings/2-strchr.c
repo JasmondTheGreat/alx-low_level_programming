@@ -1,3 +1,5 @@
+#include <stddef.h>
+
 /**
  * _strchr - locates a character in a string
  * @s: string to check
@@ -21,5 +23,5 @@ char *_strchr(char *s, char c)
 		}
 	}
 
-	return (j != -3 ? &s[j] : ((void *)0));
+	return (j != -3 ? &s[j] : NULL);
 }
