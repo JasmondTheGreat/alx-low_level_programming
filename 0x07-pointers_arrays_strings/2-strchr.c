@@ -21,5 +21,5 @@ char *_strchr(char *s, char c)
 		}
 	}
 
-	return (j != -3 ? &s[j] : 0);
+	return (j != -3 ? &s[j] : ((void *)0));
 }
