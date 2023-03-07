@@ -10,8 +10,10 @@
 char *_strchr(char *s, char c)
 {
 	int i, j;
+	char *null;
 
 	j = -3;
+	null = 0;
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
@@ -23,5 +25,7 @@ char *_strchr(char *s, char c)
 		}
 	}
 
-	return (j != -3 ? &s[j] : NULL);
+	if (j != 3)
+		return (&s[j]);
+	return (null);
 }
