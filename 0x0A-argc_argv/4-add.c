@@ -10,37 +10,42 @@
 
 int main(int argc, char *argv[])
 {
-	int i, result;
+	int i, result, returnResult, nonNumber;
 
-	i = 0;
-	result = 0;
-
+	i =	result = returnResult = nonNumber = 0;
 	if (argc == 1)
 	{
 		printf("0\n");
 	}
-	else
+	else if (argc >= 2)
 	{
+		/* Check if any arg is not a number */
 		for (i = 1; i < argc; i++)
 		{
 			if (!(*argv[i] >= '0' && *argv[i] <= '9'))
 			{
-				printf("Error\n");
-				return (1);
+				nonNumber = 1;
 			}
 		}
+
+		/* if nonNumber exitst */
+		if (nonNumber == 1)
+		{
+			printf("Error\n");
+			return (1);
+		}
+
+		/* if nonNumber does not exist */
+		else
+		{
+			for (i = 1; i < argc; i++)
+			{
+				int num = atoi(argv[i]);
+
+				result += num;
+			}
+			printf("%d\n", result);
+		}
 	}
-
-	for (i = 0; i < argc; i++)
-	{
-		int num = atoi(argv[i]);
-
-		result += num;
-
-	}
-
-	if (argc >= 2)
-		printf("%d\n", result);
-
 	return (0);
 }
