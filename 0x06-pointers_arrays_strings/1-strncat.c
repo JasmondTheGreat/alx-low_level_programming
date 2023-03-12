@@ -16,7 +16,7 @@
 
 char *_strncat(char *dest, char *src, int n)
 {
-	int len1, len2, i;
+	int len1, len2, i, j;
 
 	len1 = strlen(dest);
 	len2 = strlen(src);
@@ -27,10 +27,13 @@ char *_strncat(char *dest, char *src, int n)
 			break;
 
 		dest[len1] = src[i];
+
+		if (i == n - 1)
+			j = i;
 	}
 
 	if (n < (len2 + 1))
-		dest[i] = '\0';
+		dest[j + 1] = '\0';
 
 	return (dest);
 }
