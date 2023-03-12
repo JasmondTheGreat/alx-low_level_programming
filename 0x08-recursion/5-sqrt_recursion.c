@@ -3,19 +3,20 @@
  *
  * @number: number to get square root of
  * @incr_odd_num: increasing odd numbers
- * @result: square root result
  *
  * Return: square root of the number
  */
 
-int get_sqrt_recursion(int number, int incr_odd_num, result)
+int get_sqrt_recursion(int number, int incr_odd_num)
 {
-	if (number < 0)
-		result = -1;
-	else if (number == 0)
-		return (0);
+	number -= incr_odd_num;
 
-	return (1 + get_sqrt_recursion((number - incr_odd_num), (incr_odd_num + 2)));
+	if (number < 0)
+		return (-1);
+	else if (number == 0)
+		return ((incr_odd_num + 1) / 2);
+
+	return (get_sqrt_recursion(number, incr_odd_num + 2));
 }
 
 
@@ -27,10 +28,5 @@ int get_sqrt_recursion(int number, int incr_odd_num, result)
 
 int _sqrt_recursion(int n)
 {
-	const int isSquareRoot = get_sqrt_recursion(n, 1, 0);
-
-	if (isSquareRoot == -1)
-		return (-1);
-
-	return (isSquareRoot);
+	return (n == 0 ? 0 : get_sqrt_recursion(n, 1));
 }
