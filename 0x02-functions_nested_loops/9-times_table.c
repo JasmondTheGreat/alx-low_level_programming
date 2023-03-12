@@ -1,5 +1,6 @@
 #include "includes.c"
 #include "main.h"
+#include <stdio.h>
 
 /**
  * times_table - prints out the 9 times table, starting with 0.
@@ -20,6 +21,6 @@ void times_table(void)
 			else if (j == 9)
 				printf("%3d", i * j);
 		}
-		_putchar('\n');
+		putchar('\n');
 	}
 }
