@@ -4,22 +4,20 @@
  * Return: 1 if 'n' is prime, otherwise, 0
  */
 
+int check_prime(int n, int count, int i)
+{
+	if (n % i == 0)
+		count += 1;
+
+	if (n == i && count == 2)
+		return (1);
+	else if (n < 0 || count > 2)
+		return (0);
+
+	return (check_prime(n, count, i + 1));
+}
+
 int is_prime_number(int n)
 {
-	int i;
-	int count = 0;
-
-
-	for (i = 1; i <= n; i++)
-	{
-		if (n % i == 0)
-			count++;
-
-		if (count == 2)
-			break;
-	}
-
-	if (i == n)
-		return (1);
-	return (0);
+	return (check_prime(n, 0, 1));
 }
