@@ -18,11 +18,12 @@ char *_strdup(char *str)
 
 	strCopy = malloc(len * sizeof(char));
 
+	if (str == NULL || len == 0)
+		return (NULL);
+
 	for (i = 0; i < len; i++)
 		strCopy[i] = str[i];
 
-	if (str == NULL || len == 0)
-		return (NULL);
 
 	return (strCopy);
 
