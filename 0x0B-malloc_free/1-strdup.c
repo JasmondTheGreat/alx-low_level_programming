@@ -26,10 +26,9 @@ char *_strdup(char *str)
 	if (strCopy == NULL)
 		return (NULL);
 
-	for (i = 0; i < len; i++)
+	for (i = 0; i <= len; i++)
 		strCopy[i] = str[i];
 
-	strCopy[len] = '\0';
 
 	return (strCopy);
 }
