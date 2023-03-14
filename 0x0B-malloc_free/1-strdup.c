@@ -23,8 +23,10 @@ char *_strdup(char *str)
 	if (strCopy == NULL || str == NULL)
 		return (NULL);
 
-	for (i = 0; i < len + 1; i++)
+	for (i = 0; i < len; i++)
 		strCopy[i] = str[i];
+
+	strCopy[len] = '\0';
 
 	return (strCopy);
 }
