@@ -10,11 +10,11 @@
 
 char *_strdup(char *str)
 {
-	if (str == NULL)
-		return (NULL);
-
 	char *strCopy;
 	int i, len = 0;
+
+	if (str == NULL)
+		return (NULL);
 
 	while (str[len] != '\0')
 	{
