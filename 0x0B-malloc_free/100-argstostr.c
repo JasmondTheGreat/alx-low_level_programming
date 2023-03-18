@@ -13,7 +13,7 @@
 
 char *argstostr(int ac, char **av)
 {
-	int i, j, len;
+	int i, j, len, len2;
 	char **arr, *string;
 
 
@@ -46,12 +46,14 @@ char *argstostr(int ac, char **av)
 	{
 		for (j = 0; j < *arr[i]; j++)
 		{
-			int len = 0;
+			int len3 = 0;
+
+			len2 += i;
 
 			while (arr[i][j] != '\0')
-				len++;
+				len3++;
 
-			string[len + i] = arr[i][j];
+			string[len2 + len3] = arr[i][j];
 		}
 		string[len + i + 1] = '\n';
 	}
