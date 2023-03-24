@@ -1,5 +1,6 @@
 #include <stdarg.h>
 #include <stdio.h>
+#include <string.h>
 
 /**
  * print_strings - prints strings, followed by a new line
@@ -10,20 +11,26 @@
 
 void print_strings(const char *separator, const unsigned int n, ...)
 {
-	 unsigned int i;
+	va_list args;
+	unsigned int i;
+	char *str;
 
-     va_list list;
+	va_start(args, n);
 
-     va_start(list, n);
+	for (i = 0; i < n; i++)
+	{
+		str = va_arg(args, char *);
 
-     for (i = 0; i < n; i++)
-     {
-         printf("%s", va_arg(list, char*));
+		if (str == NULL)
+			printf("(nil)");
+		else
+			printf("%s", str);
 
-         if ((i + 1) < (n) && separator)
-             printf("%s", separator);
-     }
-     printf("\n");
+		if (separator != NULL && i != n - 1)
+			printf("%s", separator);
+	}
 
-     va_end(list);
+	printf("\n");
+
+	va_end(args);
 }
