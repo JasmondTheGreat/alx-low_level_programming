@@ -6,11 +6,13 @@
  * @format: data type format to print
  */
 
+#include <stdio.h>
+#include <stdarg.h>
 
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	int i;
+	int i = 0;
 	char *s;
 
 	va_start(args, format);
@@ -32,7 +34,7 @@ void print_all(const char * const format, ...)
 				s = va_arg(args, char *);
 				if (s == NULL)
 				{
-					printf("nil");
+					printf("(nil)");
 					break;
 				}
 				printf("%s", s);
@@ -42,11 +44,16 @@ void print_all(const char * const format, ...)
 		}
 
 		if (format[i + 1] != '\0'
-			&& (format[i] == 'c' || format[i] == 'i'
-			|| format[i] == 'f' || format[i] == 's'))
+			&& (format[i] == 'c'
+			|| format[i] == 'i'
+			|| format[i] == 'f'
+			|| format[i] == 's'))
 			printf(", ");
+
 		i++;
 	}
+
 	va_end(args);
+
 	printf("\n");
 }
