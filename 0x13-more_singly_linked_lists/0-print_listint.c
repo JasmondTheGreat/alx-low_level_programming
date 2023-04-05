@@ -1,6 +1,7 @@
 #include "lists.h"
 #include <stdio.h>
 #include <stddef.h>
+#include <stdlib.h>
 
 /**
  * print_listint - prints all the elements of a "listint_t" list
@@ -15,7 +16,7 @@ size_t print_listint(const listint_t *h)
 	if (h == NULL)
 	{
 		printf("Error\n");
-		return (1);
+		exit (1);
 	}
 
 	while (h != NULL)
