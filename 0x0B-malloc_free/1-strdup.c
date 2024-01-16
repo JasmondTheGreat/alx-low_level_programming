@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * _strdup -
+ * _strdup - returns a pointer to a string passed in
  * @str: string pointer
  *
  * Return: pointer to new string which is a duplicate of the passed in string
