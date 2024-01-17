@@ -4,8 +4,8 @@
 /**
  * argstostr - concatenates all the arguments of your program
  *
- * @ac - argument count param
- * @av - argument vector param
+ * @ac: argument count param
+ * @av: argument vector param
  *
  * Return: pointer to concatenated string result
  */
