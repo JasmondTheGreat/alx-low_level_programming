@@ -2,6 +2,29 @@
 #include <stdlib.h>
 
 /**
+ * str_check - performs checks on a string parameter
+ *
+ * @str: string parameter
+ *
+ * Return: NULL if fail or empty string if successful
+ */
+
+char *str_check(char *str)
+{
+	if (str == NULL)
+	{
+		str = (char *)malloc(1);
+
+		if (str == NULL)
+			return (NULL);
+
+		str[0] = '\0';
+	}
+
+	return (str);
+}
+
+/**
  * str_concat - concatenates two strings
  *
  * @s1: first string
@@ -18,12 +41,8 @@ char *str_concat(char *s1, char *s2)
 
 	char *result = (char *)malloc(len_result);
 
-	if (s1 == NULL)
-		s1 = "";
-
-	if (s2 == NULL)
-		s2 = "";
-
+	s1 = str_check(s1);
+	s2 = str_check(s2);
 
 	if (result != NULL)
 	{
