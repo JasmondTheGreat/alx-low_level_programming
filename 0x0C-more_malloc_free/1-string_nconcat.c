@@ -2,6 +2,30 @@
 #include <string.h>
 
 /**
+ * checkString - checks if a string parameter is NULL or not
+ *
+ * @str: string parameter
+ *
+ * Return: string of NULL
+ */
+
+char *checkString(char *str)
+{
+	if (str == NULL)
+	{
+		str = (char *)malloc(1);
+
+		if (str == NULL)
+			return (NULL);
+
+		str[0] = '\0';
+	}
+
+	return (str);
+}
+
+
+/**
  * string_nconcat - concatenates two strings till a certain length
  *
  * @s1: first string
@@ -14,33 +38,16 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	size_t len1 = strlen(s1), len2 = strlen(s2), i;
-	size_t totLen = len1 + n;
+	size_t totLen = len1 + n + 1;
 	char *result;
 
-	if (s1 == NULL)
-	{
-		s1 = (char *)malloc(1);
-
-		if (s1 == NULL)
-			return (NULL);
-
-		s1[0] = '\0';
-	}
-
-	if (s2 == NULL)
-	{
-		s2 = (char *)malloc(1);
-
-		if (s2 == NULL)
-			return (NULL);
-
-		s2[0] = '\0';
-	}
+	s1 = checkString(s1);
+	s2 = checkString(s2);
 
 	if (n >= len2)
 		totLen = len1 + len2 + 1;
 
-	result = malloc(totLen);
+	result = (char *)malloc(totLen);
 
 	if (result == NULL)
 		return (NULL);
@@ -48,8 +55,18 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	for (i = 0; i < len1; i++)
 		result[i] = s1[i];
 
-	for (i = 0; i < n; i++)
-		result[i + len1] = s2[i];
+	if (n >= len2)
+	{
+		for (i = 0; i < len2; i++)
+			result[i + len1] = s2[i];
+	}
+	else
+	{
+		for (i = 0; i < n; i++)
+			result[i + len1] = s2[i];
+	}
+
+	result[totLen] = '\0';
 
 	return (result);
 }
