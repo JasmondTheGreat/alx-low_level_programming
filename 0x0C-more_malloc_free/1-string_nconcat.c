@@ -38,34 +38,28 @@ char *checkString(char *str)
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	size_t len1 = strlen(s1), len2 = strlen(s2), i;
-	size_t totLen = len1 + n + 1;
+	size_t len1 = strlen(s1), len2 = n, i;
+	size_t totLen;
 	char *result;
 
 	s1 = checkString(s1);
 	s2 = checkString(s2);
 
-	if (n >= len2)
-		totLen = len1 + len2 + 1;
+	if (n >= strlen(s2))
+		len2 = strlen(s2);
+
+	totLen = len1 + len2 + 1;
 
 	result = (char *)malloc(totLen);
-
 	if (result == NULL)
 		return (NULL);
+
 
 	for (i = 0; i < len1; i++)
 		result[i] = s1[i];
 
-	if (n >= len2)
-	{
-		for (i = 0; i < len2; i++)
-			result[i + len1] = s2[i];
-	}
-	else
-	{
-		for (i = 0; i < n; i++)
-			result[i + len1] = s2[i];
-	}
+	for (i = 0; i < len2; i++)
+		result[i + len1] = s2[i];
 
 	result[totLen] = '\0';
 
