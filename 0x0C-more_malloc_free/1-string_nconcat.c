@@ -42,10 +42,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	size_t totLen;
 	char *result;
 
-	s1 = checkString(s1);
-	s2 = checkString(s2);
+	if (s1 == NULL)
+		len1 = 0;
+	if (s2 == NULL)
+		len2 = 0;
 
-	if (n >= strlen(s2))
+	if (n >= strlen(s2) && s2 != NULL)
 		len2 = strlen(s2);
 
 	totLen = len1 + len2 + 1;
@@ -54,14 +56,19 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (result == NULL)
 		return (NULL);
 
+	if (totLen == 1)
+		result[0] = '\0';
+	else
+	{
+		for (i = 0; i < len1; i++)
+			result[i] = s1[i];
 
-	for (i = 0; i < len1; i++)
-		result[i] = s1[i];
+		for (i = 0; i < len2; i++)
+			result[i + len1] = s2[i];
 
-	for (i = 0; i < len2; i++)
-		result[i + len1] = s2[i];
+		result[totLen] = '\0';
 
-	result[totLen] = '\0';
+	}
 
 	return (result);
 }
