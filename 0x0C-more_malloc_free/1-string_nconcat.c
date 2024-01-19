@@ -63,8 +63,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (result == NULL)
 		return (NULL);
 
-	if (totLen == 1)
-		result[0] = '\0';
 	else
 	{
 		for (i = 0; i < len1; i++)
@@ -73,7 +71,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		for (i = 0; i < len2; i++)
 			result[i + len1] = s2[i];
 
-		result[totLen] = '\0';
+		result[len1 + len2] = '\0';
 
 	}
 
