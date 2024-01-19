@@ -14,12 +14,13 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void *array = malloc(nmemb * size);
+	size_t i;
 
 	if (array == NULL || nmemb == 0 || size == 0)
 		return (NULL);
 
-	if (array != NULL)
-		memset(array, 0, size);
+	for (i = 0; i < (nmemb * size); i++)
+		array[i] = 0;
 
 	return (array);
 }
