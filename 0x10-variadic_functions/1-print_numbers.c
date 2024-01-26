@@ -14,8 +14,11 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	size_t i;
 	va_list args;
 
+	if (separator == NULL)
+	{
 
-	if (separator != NULL)
+	}
+	else
 	{
 		va_start(args, n);
 
