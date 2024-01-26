@@ -14,14 +14,10 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	size_t i;
 	va_list args;
 
-	if (separator == NULL)
-	{
+	va_start(args, n);
 
-	}
-	else
+	if (separator != NULL)
 	{
-		va_start(args, n);
-
 		for (i = 0; i < n; i++)
 		{
 			int arg = va_arg(args, int);
@@ -31,10 +27,10 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 			if (i < (n - 1))
 				printf("%s", separator);
 		}
-		printf("\n");
-
-		va_end(args);
 	}
 
+	va_end(args);
+
+	printf("\n");
 }
 
