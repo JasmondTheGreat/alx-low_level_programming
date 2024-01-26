@@ -36,7 +36,8 @@ void print_all(const char * const format, ...)
 				printf("%s", s == NULL ? "(nil)" : s);
 				break;
 			}
-
+			default:
+				break;
 		}
 
 		if (format[i] && i < (formatCount - 1)
