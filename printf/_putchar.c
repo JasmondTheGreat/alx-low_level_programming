@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * putchar - prints a character
+ * _putchar - prints a character
  *
  * @c: character to print
  *
@@ -10,5 +10,5 @@
 
 int _putchar(char c)
 {
-	return (write (1, &c, 1));
+	return (write(1, &c, 1));
 }
