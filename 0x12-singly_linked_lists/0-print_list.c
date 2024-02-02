@@ -19,16 +19,18 @@ size_t print_list(const list_t *h)
 	{
 		count++;
 		if (curr->str)
+		{
 			printf("[%d]", curr->len);
-		else
-			printf("[0]");
-
-		printf(" ");
-
-		if (curr->str)
+			printf(" ");
 			printf("%s\n", curr->str);
+		}
 		else
+		{
+			printf("[0]");
+			printf(" ");
 			printf("(nil)\n");
+		}
+
 		curr = curr->next;
 	}
 
