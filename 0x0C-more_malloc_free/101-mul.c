@@ -1,5 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <errno.h>
+#include <limits.h>
+
+/**
+ * exitProgram - exits the program with a status code of 98
+ *
+ * Return: void
+ */
+
+void exitProgram()
+{
+	printf("Error\n");
+	exit(98);
+}
 
 /**
  * getArgNum - converts a string number to an integer
@@ -14,8 +28,11 @@ int getArgNum(char string[])
 	char *endptr;
 	long value = strtol(string, &endptr, 10);
 
-	if (*endptr == '\0')
+	if ((errno == ERANGE && (value == LONG_MAX || value == LONG_MIN))
+			|| (*endptr != '\0' && endptr != string))
 		return ((int)value);
+	else if (value == 0)
+		return 0;
 
 	return (-1);
 }
@@ -34,22 +51,19 @@ int main(int argc, char *argv[])
 	int num1, num2;
 
 	if (argc != 3)
-	{
-		printf("Error\n");
-		exit(98);
-	}
+		exitProgram();
 	else
 	{
 		num1 = getArgNum(argv[1]);
 		num2 = getArgNum(argv[2]);
 
-		if (num1 && num2)
+		printf("num1: %d\n", num1);
+		printf("num2: %d\n", num2);
+
+		if (num1 != -1 && num2 != -1)
 			printf("%d\n", num1 * num2);
 		else
-		{
-			printf("Error\n");
-			exit(98);
-		}
+			exitProgram();
 	}
 
 	return (0);
