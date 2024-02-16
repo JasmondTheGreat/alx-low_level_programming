@@ -14,7 +14,7 @@ unsigned int binary_to_uint(const char *b)
 	int result = 0, i, j;
 	int powerResult;
 
-	if (!b)
+	if (b == NULL)
 		return (0);
 
 	for (i = 0; i < length; i++)
