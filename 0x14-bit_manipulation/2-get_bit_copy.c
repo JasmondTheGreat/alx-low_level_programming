@@ -11,30 +11,21 @@
 
 int get_bit(unsigned long int n, unsigned int index)
 {
-	int *digits, numDigits = 0, i = 0, result;
+	int i, result;
 
-	while (n != 0)
+	for (i = 0; n != 0; i++)
 	{
-		numDigits++;
-		n /= 10;
+		if (i == (int)index)
+		{
+			result = n % 2;
+			break;
+		}
+
+		n /= 2;
 	}
 
-	printf("Num digits: %d", numDigits);
-
-	if (index > (unsigned)(numDigits - 1))
+	if (result != 0 && result != 1)
 		return (-1);
-
-	digits = malloc(sizeof(int) * numDigits);
-
-	while (n != 0)
-	{
-		digits[numDigits - i - 1] = n % 10;
-		i++;
-		n /= 10;
-	}
-
-	result = digits[index];
-	free(digits);
 
 	return (result);
 }
