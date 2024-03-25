@@ -1,6 +1,6 @@
 #include "lists.h"
 
-/*
+/**
  * add_dnodeint - adds a node at the beginning of a double linked list
  *
  * @head: head node double pointer
@@ -8,7 +8,6 @@
  *
  * Return: new node added
  */
-
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
 	dlistint_t *new_node;
