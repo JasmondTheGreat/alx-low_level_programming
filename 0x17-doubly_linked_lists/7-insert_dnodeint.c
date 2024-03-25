@@ -30,15 +30,19 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	for (curr = *h, count = 0; curr != NULL; curr = curr->next, count++)
 	{
-		printf("count: %d\tidx: %d\n", count, idx);
 		if (count == idx)
 			break;
 	}
 
+
 	new_node->next = curr;
-	new_node->prev = curr->prev;
+
+	if (curr->prev != NULL)
+		new_node->prev = curr->prev;
+
 	(curr->prev)->next = new_node;
 	curr->prev = new_node;
+
 
 	if (count != idx)
 		return (NULL);
